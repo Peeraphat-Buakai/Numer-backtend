@@ -37,7 +37,6 @@ app.post('/testfalse', async (req, res) => {
 
 })
 
-console.log("Come la");
 
 app.listen(port, () => {
   console.log(`Node run with port : ${port}`);
