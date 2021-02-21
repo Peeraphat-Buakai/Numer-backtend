@@ -1,3 +1,4 @@
+console.log("GGGGGGG");
 const express = require('express')
 const app = express()
 const port = 3000
@@ -21,7 +22,7 @@ app.post('/testpost', async (req, res) => {
   ans[0].xl_new = ""
   ans[0].xr_new = ""
   for (let i = 0; i < ans.length; i++) {
-    ans[i].n = i+1
+    ans[i].n = i + 1
     console.log(ans[i])
   }
   ans[0].n = 1;
