@@ -3,6 +3,9 @@ const app = express()
 const port = 3000
 const bisection = require('./src/bisection')
 const False_Position = require('./src/False-Position')
+const Graphical = require('./src/Graphical')
+
+
 
 const cors = require('cors')
 app.use(cors())
@@ -32,10 +35,27 @@ app.post('/testpost', async (req, res) => {
 app.post('/testfalse', async (req, res) => {
   console.log(req.body.y)
   ans = await False_Position.result(req.body.x, req.body.y)
-  console.log("ans --->", ans)
+  // console.log("ans --->", ans)
+  console.log('ans----->', ans.length)
+  ans[0].x1 = ans[0].x1_first
+  ans[0].xl_new = ""
+  ans[0].xr_new = ""
+  for (let i = 0; i < ans.length; i++) {
+    ans[i].n = i + 1
+    console.log(ans[i])
+  }
+  ans[0].n = 1;
+  console.log('ans----->', ans[0].x1)
   res.send({ data: ans })
-
 })
+
+app.post('/testgraphical', async (req, res) => {
+  console.log(req.body)
+  ans = await Graphical.result(req.body.x, req.body.y)
+  // console.log('ans----->', ans.length)
+  res.send({ data: ans })
+})
+
 
 
 app.listen(port, () => {

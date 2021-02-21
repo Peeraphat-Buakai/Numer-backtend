@@ -32,9 +32,9 @@ const Given = (xl, xr) => {
   var xr_start = xr
   var fxl = (Math.pow(xl, 4) - 13)
   var fxr = (Math.pow(xr, 4) - 13)
-  var check1 = fxl*fxr
+  var check1 = fxl * fxr
   if (check1 < 0) {
-    var xm   = (xl+xr) / 2
+    var xm = (xl + xr) / 2
     var xm_first = (xl + xr) / 2
     // console.log("Xm ====>",xm);
     var fxm = (Math.pow(xm, 4) - 13)
@@ -52,7 +52,7 @@ const Given = (xl, xr) => {
         ESs: ""
       }
       return data
-    }else{
+    } else {
       xl = xm
       var data = {
         xl_start: xl_start,
@@ -66,12 +66,12 @@ const Given = (xl, xr) => {
       }
       return data
     }
-  }else{
+  } else {
     return "หาคำตอบไม่ได้"
   }
 }
 
-const full = (xl, xr,xm_old) => {
+const full = (xl, xr, xm_old) => {
   // console.log("Xl    == ",xl);
   // console.log("Xr   == ", xr);
   // console.log("Xm_old == ", xm_old);
@@ -94,7 +94,7 @@ const full = (xl, xr,xm_old) => {
         xl_new: xl,
         xr_new: xr,
         xm: xm,
-        xm_old:xm_old,
+        xm_old: xm_old,
         fxm: fxm,
         ESs: Math.abs(ESs)
       }
