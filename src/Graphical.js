@@ -16,9 +16,6 @@ const result = async (x, y) => {
   return arr
 }
 
-
-
-
 const test = (x) => {
   y_sum = (2 * x) - 3
   console.log("Y===", y_sum);

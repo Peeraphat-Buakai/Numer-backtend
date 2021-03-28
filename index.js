@@ -4,6 +4,7 @@ const port = 3000
 const bisection = require('./src/bisection')
 const False_Position = require('./src/False-Position')
 const Graphical = require('./src/Graphical')
+const OnePoint = require('./src/One-Point')
 
 
 
@@ -56,7 +57,11 @@ app.post('/testgraphical', async (req, res) => {
   res.send({ data: ans })
 })
 
-
+app.post('/testonepoint', async (req, res) => {
+  console.log(req.body)
+  ans = await OnePoint.result(req.body.x)
+  res.send({ data: ans })
+})
 
 app.listen(port, () => {
   console.log(`Node run with port : ${port}`);
