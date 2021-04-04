@@ -89,14 +89,14 @@ const full = (xl, xr, xm_old) => {
       // console.log(ESs, xm, xm_old)
       xr = xm
       var data = {
-        xl_start: xl_start,
-        xr_start: xr_start,
+        xl_start: xl_start.toFixed(7),
+        xr_start: xr_start.toFixed(7),
         xl_new: xl,
         xr_new: xr,
-        xm: xm,
+        xm: xm.toFixed(7),
         xm_old: xm_old,
-        fxm: fxm,
-        ESs: Math.abs(ESs)
+        fxm: fxm.toFixed(7),
+        ESs: (Math.abs(ESs)).toFixed(8)
       }
       return data
     } else {
@@ -104,14 +104,14 @@ const full = (xl, xr, xm_old) => {
       // console.log(ESs, xm, xm_old)
       xl = xm
       var data = {
-        xl_start: xl_start,
-        xr_start: xr_start,
+        xl_start: xl_start.toFixed(7),
+        xr_start: xr_start.toFixed(7),
         xl_new: xl,
         xr_new: xr,
-        xm: xm,
+        xm: xm.toFixed(7),
         xm_old: xm_old,
-        fxm: fxm,
-        ESs: Math.abs(ESs)
+        fxm: fxm.toFixed(7),
+        ESs: (Math.abs(ESs)).toFixed(8)
       }
       return data
     }

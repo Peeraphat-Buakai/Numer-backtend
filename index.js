@@ -60,7 +60,9 @@ app.post('/testgraphical', async (req, res) => {
 app.post('/testonepoint', async (req, res) => {
   console.log(req.body)
   ans = await OnePoint.result(req.body.x)
+  ans[0].num = 1
   res.send({ data: ans })
+  // console.log(ans)
 })
 
 app.listen(port, () => {
