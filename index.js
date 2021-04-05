@@ -6,7 +6,7 @@ const False_Position = require('./src/False-Position')
 const Graphical = require('./src/Graphical')
 const OnePoint = require('./src/One-Point')
 const Cramer = require('./src/Cramer')
-
+const  math  = require('mathjs')
 
 const cors = require('cors')
 app.use(cors())

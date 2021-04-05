@@ -1,3 +1,4 @@
+const  math  = require('mathjs')
 const result = async (val) => {
   console.log('data ==>', val)
   console.log('m ==>', val.m)
@@ -7,8 +8,10 @@ const result = async (val) => {
 
   if (val.n === (val.z).length ){
     console.log("come");
-    const c = [[2, 0], [-1, 3]] 
-    console.log(math.det(c) );
+    const assDat = val.z
+    console.log('assDet ==', assDat)
+    var check = math.det(assDat)
+    console.log('Det ==', check)
   }else{
     console.log("Error");
   }
