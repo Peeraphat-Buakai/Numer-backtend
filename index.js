@@ -5,7 +5,7 @@ const bisection = require('./src/bisection')
 const False_Position = require('./src/False-Position')
 const Graphical = require('./src/Graphical')
 const OnePoint = require('./src/One-Point')
-
+const Cramer = require('./src/Cramer')
 
 
 const cors = require('cors')
@@ -61,6 +61,14 @@ app.post('/testonepoint', async (req, res) => {
   console.log(req.body)
   ans = await OnePoint.result(req.body.x)
   ans[0].num = 1
+  res.send({ data: ans })
+  // console.log(ans)
+})
+
+app.post('/testcramer', async (req, res) => {
+  console.log(req.body)
+  ans = await Cramer.result(req.body)
+  // ans[0].num = 1
   res.send({ data: ans })
   // console.log(ans)
 })
