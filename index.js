@@ -6,6 +6,8 @@ const False_Position = require('./src/False-Position')
 const Graphical = require('./src/Graphical')
 const OnePoint = require('./src/One-Point')
 const Cramer = require('./src/Cramer')
+const GaussE = require('./src/GaussE')
+
 const  math  = require('mathjs')
 
 const cors = require('cors')
@@ -72,6 +74,16 @@ app.post('/testcramer', async (req, res) => {
   res.send({ data: ans })
   // console.log(ans)
 })
+GaussE
+
+app.post('/testgaussE', async (req, res) => {
+  console.log(req.body)
+  ans = await GaussE.result(req.body)
+  // ans[0].num = 1
+  res.send({ data: ans })
+  // console.log(ans)
+})
+
 
 app.listen(port, () => {
   console.log(`Node run with port : ${port}`);
