@@ -7,6 +7,8 @@ const Graphical = require('./src/Graphical')
 const OnePoint = require('./src/One-Point')
 const Cramer = require('./src/Cramer')
 const GaussE = require('./src/GaussE')
+const GaussJ = require('./src/GaussJ')
+
 
 const  math  = require('mathjs')
 
@@ -79,7 +81,13 @@ GaussE
 app.post('/testgaussE', async (req, res) => {
   console.log(req.body)
   ans = await GaussE.result(req.body)
-  // ans[0].num = 1
+  res.send({ data: ans })
+  // console.log(ans)
+})
+
+app.post('/testgaussJ', async (req, res) => {
+  console.log(req.body)
+  ans = await GaussJ.result(req.body)
   res.send({ data: ans })
   // console.log(ans)
 })

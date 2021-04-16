@@ -1,18 +1,11 @@
 const result = async (val)=>{
   console.log(val.z);
 
-  for (let i = 1; i < (val.z).length; i++) {
-    for (let j = 0; j < (val.z).length; j++) {
-      if(val.z[0][1] !== 0){
-        // console.log(val.z[i][j]);
-        var temp
-        for (let k = 0; k < (val.z).length; k++) {
-          temp = ((val.z[0][k])/val.z[0][1])*val.z[0][1]
-        }
-        console.log('TEMP-----',temp);
-      }
-    }
-  }
+  let arr = [[0.12, 0.18, -0.17, 5.5],  
+           [0.06, 0.09, 0.15, -1.95],  
+           [0.22, -0.1, 0.06, 0.5]]
+let res = gauss(arr)
+console.log(res)
 
 }
 
