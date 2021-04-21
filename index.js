@@ -1,15 +1,25 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const bisection = require('./src/bisection')
-const False_Position = require('./src/False-Position')
-const Graphical = require('./src/Graphical')
-const OnePoint = require('./src/One-Point')
-const Cramer = require('./src/Cramer')
-const GaussE = require('./src/GaussE')
-const GaussJ = require('./src/GaussJ')
+const bisection = require('./src/Root/bisection')
+const False_Position = require('./src/Root/False-Position')
+const Graphical = require('./src/Root/Graphical')
+const OnePoint = require('./src/Root/One-Point')
+const OnePoint2 = require('./src/Root/One-Point2')
+const Cramer = require('./src/Linear/Cramer')
+const GaussE = require('./src/Linear/GaussE')
+const GaussJ = require('./src/Linear/GaussJ')
+const LU = require('./src/Linear/Lu_Method')
+const Cholesky = require('./src/Linear/cholesky')
+const Jacobi = require('./src/Linear/Jacobi')
+const Newtons = require('./src/Interpolation/newton')
+const NewtonRaphson = require('./src/Root/Newton-Raphson')
 
 
+
+
+
+const localStorage = require('localStorage')
 const  math  = require('mathjs')
 
 const cors = require('cors')
@@ -64,7 +74,16 @@ app.post('/testgraphical', async (req, res) => {
 app.post('/testonepoint', async (req, res) => {
   console.log(req.body)
   ans = await OnePoint.result(req.body.x)
-  ans[0].num = 1
+  // ans[0].num = 1
+  // console.log(ans);
+  res.send({ data: ans })
+  // console.log(ans)
+})
+
+app.post('/testonepoint2', async (req, res) => {
+  // console.log(req.body)
+  ans = await OnePoint2.result(req.body)
+  // ans[0].num = 1
   res.send({ data: ans })
   // console.log(ans)
 })
@@ -73,7 +92,8 @@ app.post('/testcramer', async (req, res) => {
   console.log(req.body)
   ans = await Cramer.result(req.body)
   // ans[0].num = 1
-  res.send({ data: ans })
+  res.send({ data: ans ,
+  status:"success"})
   // console.log(ans)
 })
 GaussE
@@ -91,6 +111,40 @@ app.post('/testgaussJ', async (req, res) => {
   res.send({ data: ans })
   // console.log(ans)
 })
+
+app.post('/testLU', async (req, res) => {
+  // console.log(req.body)
+  ans = await LU.result(req.body)
+  res.send({ data: ans })
+  // console.log(ans)
+})
+
+app.post('/testCholesky', async (req, res) => {
+  // console.log(req.body)
+  ans = await Cholesky.result(req.body)
+  res.send({ data: ans })
+  // console.log(ans)
+})
+
+app.post('/testJacobi', async (req, res) => {
+  // console.log(req.body)
+  ans = await Jacobi.result(req.body)
+  res.send({ data: JSON.parse(localStorage.getItem('jacobi'))})
+  
+})
+
+app.post('/testNewtons', async (req, res) => {
+  // console.log(req.body)
+  ans = await Newtons.result(req.body)
+  res.send({ data: ans })
+})
+
+app.post('/testNewtonRaphson', async (req, res) => {
+  // console.log(req.body)
+  ans = await NewtonRaphson.result(req.body)
+  res.send({ data: ans })
+})
+
 
 
 app.listen(port, () => {

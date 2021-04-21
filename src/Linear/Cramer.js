@@ -8,20 +8,18 @@ const result = async (val) => {
   // console.log('Lenght z ==>', (val.z).length)
 
   let detF = math.det(val.z)
-  console.log(detF);
+  console.log('Det Z ==',detF);
   let x = []
   localStorage.setItem('DataArr', JSON.stringify(val.z))
   let temp
   for (let i = 0; i < (val.z).length; i++) {
     temp = JSON.parse(localStorage.getItem('DataArr'))
-    // console.log('TEMPPPPP',temp);
+    console.log('TEMPPPPP',temp);
     for (let j = 0; j < (val.z).length; j++) {
       temp[j][i] = val.a[j]
     }
     var ass = parseInt((math.det(temp)).toFixed(0))
-    x.push(ass/detF)
-    // console.log('Ass =====',ass);
-    // console.log('TEMP ====',temp);
+    x.push({x:ass/detF})
   }
   console.log(x);
   return x
