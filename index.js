@@ -14,7 +14,7 @@ const Cholesky = require('./src/Linear/cholesky')
 const Jacobi = require('./src/Linear/Jacobi')
 const Newtons = require('./src/Interpolation/newton')
 const NewtonRaphson = require('./src/Root/Newton-Raphson')
-
+const Line = require('./src/Regression/line')
 
 
 
@@ -143,6 +143,11 @@ app.post('/testNewtonRaphson', async (req, res) => {
   // console.log(req.body)
   ans = await NewtonRaphson.result(req.body)
   res.send({ data: ans })
+})
+
+app.post('testLine',async (req,res)=>{
+  ans = await Line.result(req.body)
+  res.send({data:ans})
 })
 
 
