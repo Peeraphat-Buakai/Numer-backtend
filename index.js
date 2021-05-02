@@ -15,6 +15,14 @@ const Jacobi = require('./src/Linear/Jacobi')
 const Newtons = require('./src/Interpolation/newton')
 const NewtonRaphson = require('./src/Root/Newton-Raphson')
 const Line = require('./src/Regression/line')
+const Polynomial = require('./src/Regression/polynomial')
+const Maltiple = require('./src/Regression/multiple')
+const Spline = require('./src/Interpolation/spline')
+const Lagrange = require('./src/Interpolation/lagrange')
+
+
+
+
 
 
 
@@ -145,9 +153,29 @@ app.post('/testNewtonRaphson', async (req, res) => {
   res.send({ data: ans })
 })
 
-app.post('testLine',async (req,res)=>{
+app.post('/testLine', async (req,res)=>{
   ans = await Line.result(req.body)
   res.send({data:ans})
+})
+
+app.post('/testPoly', async (req, res) => {
+  ans = await Polynomial.result(req.body)
+  res.send({ data: ans })
+})
+
+app.post('/testMaltiple', async (req, res) => {
+  ans = await Maltiple.result(req.body)
+  res.send({ data: ans })
+})
+
+app.post('/testspline', async (req, res) => {
+  ans = await Spline.result(req.body)
+  res.send({ data: ans })
+})
+
+app.post('/testlagrange', async (req, res) => {
+  ans = await Lagrange.result(req.body)
+  res.send({ data: ans })
 })
 
 

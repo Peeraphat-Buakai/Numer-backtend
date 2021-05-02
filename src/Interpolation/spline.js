@@ -1,7 +1,8 @@
-const regression = require("regression")
+const Spline = require("cubic-spline")
 const result = async (val) => {
   console.log(val);
-  let assige = regression.linear(val.A).predict(val.p)
+  const spline =new Spline(val.x,val.y)
+  let assige = spline.at(val.n)
   console.log('Ass--->', assige);
   return assige
 }

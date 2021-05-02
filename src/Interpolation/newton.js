@@ -10,7 +10,6 @@ const result = async(val) =>{
     console.log('come 3');
     send = await Quadratic(val)
   }
-
 return arr
 }
 

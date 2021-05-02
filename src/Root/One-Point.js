@@ -1,4 +1,3 @@
-
 const result = async (x) => {
   let arr = []
   var num = 0
