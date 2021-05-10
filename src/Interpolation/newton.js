@@ -4,7 +4,9 @@ const result = async(val) =>{
 
   if (val.point.length === 2){
     send = await Line(val)
-    arr.push(send)
+    // x.push({ x: ass / detF })
+    arr.push({x:send})
+    // arr.push(send)
   }
   else if((val.point).length === 3) {
     console.log('come 3');

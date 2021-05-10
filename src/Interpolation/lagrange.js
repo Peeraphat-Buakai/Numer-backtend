@@ -13,7 +13,10 @@ const result = async (val) => {
   }
 
   console.log('assige------',assige);
-  return assige
+  let array=[]
+  // arr.push({ x: send })
+  array.push({value:assige})
+  return array
 }
 
 module.exports = { result }

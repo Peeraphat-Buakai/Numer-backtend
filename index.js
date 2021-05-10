@@ -21,12 +21,6 @@ const Spline = require('./src/Interpolation/spline')
 const Lagrange = require('./src/Interpolation/lagrange')
 
 
-
-
-
-
-
-
 const localStorage = require('localStorage')
 const  math  = require('mathjs')
 
@@ -177,7 +171,6 @@ app.post('/testlagrange', async (req, res) => {
   ans = await Lagrange.result(req.body)
   res.send({ data: ans })
 })
-
 
 
 app.listen(port, () => {
