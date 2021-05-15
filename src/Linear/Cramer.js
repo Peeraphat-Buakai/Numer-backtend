@@ -14,7 +14,7 @@ const result = async (val) => {
   let temp
   for (let i = 0; i < (val.z).length; i++) {
     temp = JSON.parse(localStorage.getItem('DataArr'))
-    console.log('TEMPPPPP',temp);
+    // console.log('TEMPPPPP',temp);
     for (let j = 0; j < (val.z).length; j++) {
       temp[j][i] = val.a[j]
     }

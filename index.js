@@ -24,12 +24,9 @@ const localStorage = require('localStorage')
 const  math  = require('mathjs')
 
 
-// import swaggerUi from 'swagger-ui-express'
+// ****Swagger 
 const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = require('./swagger.json')
-// import bodyParser from 'body-parser'
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(
   '/docs',
