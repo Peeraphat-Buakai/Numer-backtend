@@ -16,7 +16,7 @@ return arr
 }
 
 const Line = (val) => {
-  console.log(val);
+  console.log('Check Val--->',val);
   var fx = val.y[val.point[0]-1] + (val.assige*( (val.y[val.point[1]-1]-val.y[val.point[0]-1])/(val.x[val.point[1]-1]-val.x[val.point[0]-1]) ) )
   console.log('Fx', fx);
   return fx
