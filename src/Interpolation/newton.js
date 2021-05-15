@@ -11,6 +11,7 @@ const result = async(val) =>{
   else if((val.point).length === 3) {
     console.log('come 3');
     send = await Quadratic(val)
+    arr.push({x:send})
   }
 return arr
 }
@@ -26,15 +27,14 @@ const Quadratic = (val) => {
   console.log(val);
   
   var c0 = val.y[val.point[0]-1]
-  console.log('Coo------',c0);
+  console.log('C0------',c0);
   var c1 = (val.y[val.point[1] - 1] - val.y[val.point[0] - 1] )/(val.x[val.point[1]-1]- val.x[val.point[0]-1])
   console.log('C1---',c1);
-  var c2 = (((val.y[val.point[2] - 1] - val.y[val.point[1] - 1]) / (val.x[val.point[2] - 1] - val.x[val.point[1] - 1]))) - ((val.y[val.point[1] - 1] - val.y[val.point[0] - 1]) / ((val.x[val.point[1] - 1])-val.x[val.point[0]-1]))
-  console.log('C2----', c2.toFixed(10));
-  var fx = c0 - (c1 * (val.assige - val.x[val.point[0] - 1])) + (c2 * ((val.assige - val.x[val.point[0] - 1]) * (val.assige - val.x[val.point[1] - 1])))
-
+  var c2 = ((((val.y[val.point[2] - 1] - val.y[val.point[1] - 1]) / (val.x[val.point[2] - 1] - val.x[val.point[1] - 1]))) - ((val.y[val.point[1] - 1] - val.y[val.point[0] - 1]) / ((val.x[val.point[1] - 1]) - val.x[val.point[0] - 1]))) / (val.x[val.point[2] - 1] - val.x[val.point[0] - 1])
+  console.log('C2----', c2.toFixed(15));
+  var fx = c0 + (c1 * (val.assige - val.x[val.point[0] - 1])) + (c2 * (val.assige - val.x[val.point[0] - 1]) * (val.assige - val.x[val.point[1] - 1]))
   console.log('Check', fx);
-
+  return fx
 }
 
 

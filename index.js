@@ -38,10 +38,10 @@ const cors = require('cors')
 app.use(cors())
 app.use(express.json())
 
-app.get('/test', (req, res) => {
-  console.log(bisection.result);
-  res.send(bisection.result)
-})
+// app.get('/test', (req, res) => {
+//   console.log(bisection.result);
+//   res.send(bisection.result)
+// })
 
 app.post('/testpost', async (req, res) => {
   console.log(req.body)
@@ -108,7 +108,6 @@ app.post('/testcramer', async (req, res) => {
   status:"success"})
   // console.log(ans)
 })
-GaussE
 
 app.post('/testgaussE', async (req, res) => {
   console.log(req.body)
