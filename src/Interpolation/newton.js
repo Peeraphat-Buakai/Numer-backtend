@@ -13,7 +13,7 @@ const result = async(val) =>{
     send = await Quadratic(val)
     arr.push({x:send})
   }
-return arr
+  return arr
 }
 
 const Line = (val) => {
@@ -25,7 +25,7 @@ const Line = (val) => {
 
 const Quadratic = (val) => {
   console.log(val);
-  
+
   var c0 = val.y[val.point[0]-1]
   console.log('C0------',c0);
   var c1 = (val.y[val.point[1] - 1] - val.y[val.point[0] - 1] )/(val.x[val.point[1]-1]- val.x[val.point[0]-1])
@@ -33,7 +33,7 @@ const Quadratic = (val) => {
   var c2 = ((((val.y[val.point[2] - 1] - val.y[val.point[1] - 1]) / (val.x[val.point[2] - 1] - val.x[val.point[1] - 1]))) - ((val.y[val.point[1] - 1] - val.y[val.point[0] - 1]) / ((val.x[val.point[1] - 1]) - val.x[val.point[0] - 1]))) / (val.x[val.point[2] - 1] - val.x[val.point[0] - 1])
   console.log('C2----', c2.toFixed(15));
   var fx = c0 + (c1 * (val.assige - val.x[val.point[0] - 1])) + (c2 * (val.assige - val.x[val.point[0] - 1]) * (val.assige - val.x[val.point[1] - 1]))
-  console.log('Check', fx);
+  console.log('CheckFx', fx);
   return fx
 }
 
