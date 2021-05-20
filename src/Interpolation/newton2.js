@@ -10,7 +10,7 @@ const result = async (val) => {
     mY[i] = [];
     mY[i][0] = Y0[i];
   }
-  // console.log('Check----',mY);
+  console.log('Check----',mY);
 
   let proterm = (i, value, mX) => {
     let pro = 1;
@@ -26,7 +26,7 @@ const result = async (val) => {
         mY[j][i] = (mY[j][i - 1] - mY[j + 1][i - 1]) / (mX[j] - mX[i + j]);
       }
     }
-    console.log('mY-------->',mY);
+    console.log('C-------->',mY[0]);
   }
 
   let applyFormula = (value, mX, mY, n) => {

@@ -16,9 +16,6 @@ const result = async(val) =>{
     send = await Quadratic2(val)
     arr.push({ x: send })
   }
-
-  
-
   return arr
 }
 
