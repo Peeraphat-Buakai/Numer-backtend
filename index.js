@@ -19,6 +19,9 @@ const Polynomial = require('./src/Regression/polynomial')
 const Maltiple = require('./src/Regression/multiple')
 const Spline = require('./src/Interpolation/spline')
 const Lagrange = require('./src/Interpolation/lagrange')
+const Newton2 = require('./src/Interpolation/newton2')
+
+// import { Newton2 } from './src/Interpolation/newton2';
 
 const localStorage = require('localStorage')
 const  math  = require('mathjs')
@@ -150,6 +153,12 @@ app.post('/testNewtons', async (req, res) => {
   res.send({ data: ans })
 })
 
+app.post('/testNewtons2', async (req, res) => {
+  // console.log(req.body)
+  ans = await Newton2.result(req.body)
+  res.send({ data: ans })
+})
+
 app.post('/testNewtonRaphson', async (req, res) => {
   // console.log(req.body)
   ans = await NewtonRaphson.result(req.body)
@@ -180,6 +189,8 @@ app.post('/testlagrange', async (req, res) => {
   ans = await Lagrange.result(req.body)
   res.send({ data: ans })
 })
+
+
 
 
 app.listen(port, () => {

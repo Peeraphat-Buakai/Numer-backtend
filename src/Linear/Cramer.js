@@ -18,6 +18,7 @@ const result = async (val) => {
     for (let j = 0; j < (val.z).length; j++) {
       temp[j][i] = val.a[j]
     }
+    // console.log('Check',temp);
     var ass = parseInt((math.det(temp)).toFixed(0))
     x.push({x:ass/detF})
   }

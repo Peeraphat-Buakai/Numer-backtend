@@ -116,7 +116,7 @@
       }
     },
 
-    "/testNewtons": {
+    "/testNewtons2": {
       "post": {
         "tags": [
           "Interpolation And Extrapolation"
