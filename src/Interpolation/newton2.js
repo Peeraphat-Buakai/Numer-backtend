@@ -17,7 +17,7 @@ const result = async (val) => {
     for (let j = 0; j < i; j++) {
       pro = pro * (value - mX[j]);
     }
-    console.log('Pro--->',pro);
+    // console.log('Pro--->',pro);
     return pro;
   }
 
@@ -40,7 +40,7 @@ const result = async (val) => {
     let sum = mY[0][0]
     for (let i = 1; i < n; i++) {
       sum = sum + (proterm(i, value, mX) * mY[0][i])
-      console.log('sum---->',sum);
+      // console.log('sum---->',sum);
     }
     return sum;
   }
@@ -49,7 +49,6 @@ const result = async (val) => {
   let f = applyFormula(value, mX, mY, n)
   console.log('Ans-->',f)
   arr.push({ x: f })
-  // arr.push({c:arr2})
   return arr
   
 }
