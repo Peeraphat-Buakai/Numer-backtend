@@ -1,5 +1,6 @@
 const result = async (val) => {
   let arr = []
+  let arr2 = []
   const mX = val.x
   const Y0 = val.y
   const value = val.assige
@@ -10,13 +11,13 @@ const result = async (val) => {
     mY[i] = [];
     mY[i][0] = Y0[i];
   }
-  console.log('Check----',mY);
 
   let proterm = (i, value, mX) => {
     let pro = 1;
     for (let j = 0; j < i; j++) {
       pro = pro * (value - mX[j]);
     }
+    console.log('Pro--->',pro);
     return pro;
   }
 
@@ -26,7 +27,13 @@ const result = async (val) => {
         mY[j][i] = (mY[j][i - 1] - mY[j + 1][i - 1]) / (mX[j] - mX[i + j]);
       }
     }
-    console.log('C-------->',mY[0]);
+    console.log('C-------->', mY[0]);
+    // console.log('C2-------->', mY[0][2].toFixed(15));
+    for (let i = 0; i < mY[0].length; i++) {
+      arr2[i]= mY[0][i].toFixed(20)
+    }
+    console.log('ArrayC ---->',arr2);
+    
   }
 
   let applyFormula = (value, mX, mY, n) => {
@@ -42,6 +49,7 @@ const result = async (val) => {
   let f = applyFormula(value, mX, mY, n)
   console.log('Ans-->',f)
   arr.push({ x: f })
+  // arr.push({c:arr2})
   return arr
   
 }
