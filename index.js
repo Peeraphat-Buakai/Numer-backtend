@@ -20,12 +20,8 @@ const Maltiple = require('./src/Regression/multiple')
 const Spline = require('./src/Interpolation/spline')
 const Lagrange = require('./src/Interpolation/lagrange')
 const Newton2 = require('./src/Interpolation/newton2')
-
-// import { Newton2 } from './src/Interpolation/newton2';
-
 const localStorage = require('localStorage')
 const  math  = require('mathjs')
-
 
 // ****Swagger 
 const swaggerUi = require('swagger-ui-express')

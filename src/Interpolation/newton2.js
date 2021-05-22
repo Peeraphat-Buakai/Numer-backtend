@@ -1,4 +1,5 @@
 const result = async (val) => {
+  console.log('Value',val);
   let arr = []
   let arr2 = []
   const mX = val.x
@@ -11,6 +12,7 @@ const result = async (val) => {
     mY[i] = [];
     mY[i][0] = Y0[i];
   }
+  console.log('MY',mY);
 
   let proterm = (i, value, mX) => {
     let pro = 1;
@@ -28,7 +30,6 @@ const result = async (val) => {
       }
     }
     console.log('C-------->', mY[0]);
-    // console.log('C2-------->', mY[0][2].toFixed(15));
     for (let i = 0; i < mY[0].length; i++) {
       arr2[i]= mY[0][i].toFixed(20)
     }
@@ -40,7 +41,7 @@ const result = async (val) => {
     let sum = mY[0][0]
     for (let i = 1; i < n; i++) {
       sum = sum + (proterm(i, value, mX) * mY[0][i])
-      // console.log('sum---->',sum);
+      console.log('sum---->',i,sum);
     }
     return sum;
   }

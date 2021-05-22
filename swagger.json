@@ -121,7 +121,7 @@
         "tags": [
           "Interpolation And Extrapolation"
         ],
-        "description": "Newton's Divide Difference Method",
+        "description": "Newton's ",
         "parameters": [
           {
             "name": "value",
